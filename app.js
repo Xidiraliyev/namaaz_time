@@ -4,7 +4,7 @@ const app = express();
 const fs = require("fs");
 let pas = "salom.html";
 let data = `fhfgh`;
-
+const port = process.env.PORT || 8080
 // app.set('view engine', 'ejs');
 app.get("/", async (req, res) => {
     const puppeteer = require("puppeteer");
@@ -194,7 +194,7 @@ app.get("/", async (req, res) => {
     res.sendFile(path.join(__dirname, "./salom.html"));
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log(path.join(__dirname, "/./index.html"));
     console.log("server is running");
 });
